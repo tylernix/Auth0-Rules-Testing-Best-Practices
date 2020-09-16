@@ -1,6 +1,6 @@
 const denyIPsNotMe = require("./denyIPsNotMe.js");
 describe(denyIPsNotMe, () => {
-  it("should pass return null as error", () => {
+  it("should pass: return null as error", () => {
     expect.hasAssertions();
     const context = {
       request: {
@@ -14,7 +14,7 @@ describe(denyIPsNotMe, () => {
 
     denyIPsNotMe(user, context, callback);
   });
-  it("should return error", () => {
+  it("should pass: return error", () => {
     expect.hasAssertions();
     const context = {
       request: {
