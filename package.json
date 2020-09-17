@@ -14,8 +14,10 @@
   "dependencies": {
     "auth0-deploy-cli": "^5.1.5",
     "eslint-plugin-jest": "^23.20.0",
+    "fs": "0.0.1-security",
     "ipaddr.js": "^2.0.0",
-    "jest": "^26.4.1"
+    "jest": "^26.4.1",
+    "vm": "^0.1.0"
   },
   "devDependencies": {
     "eslint": "^7.7.0"

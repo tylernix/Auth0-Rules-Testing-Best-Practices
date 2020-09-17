@@ -1,5 +1,6 @@
-const denyIPsNotMe = require("./denyIPsNotMe.js");
-describe(denyIPsNotMe, () => {
+const filePath = "./src/rules/ipAddressWhitelist.js";
+const _ipAddressWhitelist = require("./auth0Rules.boiler.js")(filePath);
+describe(eval(_ipAddressWhitelist), () => {
   it("should pass: return null as error", () => {
     expect.hasAssertions();
     const context = {
@@ -12,13 +13,14 @@ describe(denyIPsNotMe, () => {
       expect(err).toBeNull();
     };
 
-    denyIPsNotMe(user, context, callback);
+    // eslint-disable-next-line no-undef
+    ipAddressWhitelist(user, context, callback);
   });
   it("should pass: return error", () => {
     expect.hasAssertions();
     const context = {
       request: {
-        ip: "47.220.7.000"
+        ip: "47.220.7.0"
       },
     };
     const user = {};
@@ -27,6 +29,7 @@ describe(denyIPsNotMe, () => {
       expect(err).not.toBeNull();
     };
 
-    denyIPsNotMe(user, context, callback);
+    // eslint-disable-next-line no-undef
+    ipAddressWhitelist(user, context, callback);
   });
 });
